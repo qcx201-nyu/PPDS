@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+			<table BORDER="0" WIDTH="15%" ALIGN="CENTER">
+				<thead>
+					<tr><h4 align='center'>
+                    {{attributes[0].title[:3]}}. {{attributes[0].first_name}} {{attributes[0].last_name}}
+                    </h4></tr>
+				</thead>
+				<tbody>
+					<td><IMG SRC={{image_url}}></IMG></td>
+				</tbody>
+			</table>
+		
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h2 class="panel-title"> Bio Information </h2>
+        </div>
+            <table  class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>    <!-- Construct table header -->
+                    
+			<th> First Name </th>
+			<th> Last Name </th>
+			<th> Middle Name </th>
+			<th> Date Of Birth </th>
+			<th> Id </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for attrb in [attributes[-1]] %}
+                        <tr>
+                    
+			<td>{{ attrb.first_name }}</td>
+			<td>{{ attrb.last_name }}</td>
+			<td>{{ attrb.middle_name }}</td>
+			<td>{{ attrb.date_of_birth }}</td>
+			<td>{{ attrb.id }}</td>
+
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+		
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h2 class="panel-title"> Position (Latest) </h2>
+        </div>
+            <table  class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>    <!-- Construct table header -->
+                    
+			<th> Title </th>
+			<th> Party </th>
+			<th> Seniority </th>
+			<th> State </th>
+			<th> District </th>
+			<th> State Rank </th>
+			<th> Leadership Role </th>
+			<th> In Office </th>
+			<th> Next Election </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for attrb in [attributes[-1]] %}
+                        <tr>
+                    
+			<td>{{ attrb.title }}</td>
+			<td>{{ attrb.party }}</td>
+			<td>{{ attrb.seniority }}</td>
+			<td>{{ attrb.state }}</td>
+			<td>{{ attrb.district }}</td>
+			<td>{{ attrb.state_rank }}</td>
+			<td>{{ attrb.leadership_role }}</td>
+			<td>{{ attrb.in_office }}</td>
+			<td>{{ attrb.next_election }}</td>
+
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+		
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h2 class="panel-title"> Voting Summary </h2>
+        </div>
+            <table  class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>    <!-- Construct table header -->
+                    
+			<th> Congress </th>
+			<th> Dw Nominate </th>
+			<th> Votes With Party Pct </th>
+			<th> Missed Votes Pct </th>
+			<th> Missed Votes </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for attrb in attributes %}
+                        <tr>
+                    
+			<td>{{ attrb.congress }}</td>
+			<td>{{ attrb.dw_nominate }}</td>
+			<td>{{ attrb.votes_with_party_pct }}</td>
+			<td>{{ attrb.missed_votes_pct }}</td>
+			<td>{{ attrb.missed_votes }}</td>
+
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+		
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h2 class="panel-title"> Other Information </h2>
+        </div>
+            <table  class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>    <!-- Construct table header -->
+                    
+			<th> Chamber </th>
+			<th> Gender </th>
+			<th> Congress </th>
+			<th> Twitter Account </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for attrb in [attributes[-1]] %}
+                        <tr>
+                    
+			<td>{{ attrb.chamber }}</td>
+			<td>{{ attrb.gender }}</td>
+			<td>{{ attrb.congress }}</td>
+			<td>{{ attrb.twitter_account }}</td>
+
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+	</div>
+</body>
+</html>
